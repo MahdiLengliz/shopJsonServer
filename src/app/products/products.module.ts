@@ -9,10 +9,18 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { AllProductByDateComponent } from './all-product-by-date/all-product-by-date.component';
 import { AllProductByCategoryComponent } from './all-product-by-category/all-product-by-category.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 
 @NgModule({
-  declarations: [ProductsComponent, CreateProductComponent, ListProductComponent, UpdateProductComponent, DeleteProductComponent, AllProductByDateComponent, AllProductByCategoryComponent],
+  declarations: [ProductsComponent,
+    CreateProductComponent,
+    ListProductComponent,
+    UpdateProductComponent,
+    DeleteProductComponent,
+    AllProductByDateComponent,
+    AllProductByCategoryComponent,
+    ViewProductComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule
