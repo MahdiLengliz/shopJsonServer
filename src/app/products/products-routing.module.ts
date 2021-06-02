@@ -11,12 +11,12 @@ import {AllProductByDateComponent} from './all-product-by-date/all-product-by-da
 import {ViewProductComponent} from './view-product/view-product.component';
 
 const routes: Routes = [
-  { path: '', component: ProductsComponent },
+  { path: '', component: ListProductComponent },
+  {path:'list-products', component:ListProductComponent},
   { path: 'create-product', component: CreateProductComponent },
-  { path: 'list-product', component: ListProductComponent },
   { path: 'update-product/:id', component: UpdateProductComponent },
   { path: 'delete-product/:id', component: DeleteProductComponent },
-  { path: 'search-cat', component: AllProductByCategoryComponent },
+  { path: 'search-cat/:id', component: AllProductByCategoryComponent },
   { path: 'view-product/:id', component: ViewProductComponent },
   { path: 'search-date', component: AllProductByDateComponent }];
 
