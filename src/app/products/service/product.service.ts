@@ -15,8 +15,8 @@ export class ProductService {
   createProduct(product): Observable<Product> {
    return this.http.post<Product>(url,product);
   }
-  viewProduct(productID): Observable<Product> {
-    return this.http.get<Product>(url+'/'+productID);
+  viewProduct(productID): Observable<any> {
+    return this.http.get(url+'/'+productID);
   }
   updateProduct(product,productId): Observable<Product> {
     return this.http.put<Product>(url+'/'+productId,product);
@@ -25,13 +25,13 @@ export class ProductService {
   deleteProduct(productId): Observable<Product> {
     return this.http.delete<Product>(url+'/'+productId);
   }
-  searchCatProduct(catId): Observable<Product> {
-    return this.http.get<Product>(url+'?category_id='+catId);
+  searchCatProduct(catId): Observable<any> {
+    return this.http.get(url+'?category_id='+catId);
   }
   searchDateProduct(date): Observable<Product> {
     return this.http.get<Product>(url+'date='+date);
   }
-  viewAllProducts(): Observable<Product> {
-    return this.http.get<Product>(url);
+  viewAllProducts(): Observable<any> {
+    return this.http.get(url);
   }
 }

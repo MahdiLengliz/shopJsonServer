@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CategoryService} from '../../categories/service/category.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+listUsers:any
+  rrr='user'
+  constructor(private catS:CategoryService) { }
 
   ngOnInit() {
+    this.getUser()
   }
-
+getUser(){
+    this.catS.getUser().subscribe(data=>{
+      this.listUsers=data
+      console.log(this.listUsers)
+    })
+}
 }

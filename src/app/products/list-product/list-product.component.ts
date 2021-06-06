@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../service/product.service';
 import {Product} from '../model/product';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-list-product',
@@ -8,13 +9,20 @@ import {Product} from '../model/product';
   styleUrls: ['./list-product.component.css']
 })
 export class ListProductComponent implements OnInit {
-productList:Product
+public productList:Product[]
   constructor(private serviceProduct:ProductService) { }
 
   ngOnInit() {
-  this.serviceProduct.viewAllProducts().subscribe(data=>{
-    this.productList=data;
-  })
+  this.viewAllProducts();
   }
+  public viewAllProducts() : void{
+  this.serviceProduct.viewAllProducts().subscribe((response:Product[])=>{
+      this.productList=response;
+    },
+    (error:HttpErrorResponse) =>{
+      alert(error.message)
+    }
+  )
 
+  }
 }

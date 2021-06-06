@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 import {ProductService} from '../service/product.service';
 import {Product} from '../model/product';
+import {HttpErrorResponse} from '@angular/common/http';
+import {DeleteProductComponent} from '../delete-product/delete-product.component';
 
 @Component({
   selector: 'app-view-product',
@@ -9,17 +11,56 @@ import {Product} from '../model/product';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
-productId = 0;
-productList:Product
-  constructor(private activateRoute: ActivatedRoute,private productService:ProductService) { }
+productId ;
+productList={
+  id_p: '',
+  name_p: '',
+  category_id_p: '',
+  description_p: '',
+  image_path_p: '',
+  prise_p: '',
+  is_available_p: '',
+  rating_p: '',
+  reviews_p: '',
+  vendor_name_p: '',
+  warranty_p: ''
+}
+  constructor(private activateRoute: ActivatedRoute,private productService:ProductService,private route:Router) { }
 
   ngOnInit() {
     this.activateRoute.params.subscribe(data => {
       this.productId = data.id;
     });
-    this.productService.viewProduct(this.productId).subscribe(dataP =>{
-      this.productList=dataP;
-    });
+this.viewProduct(this.productId)
   }
 
+  public viewProduct(id)  {
+    this.productService.viewProduct(id).subscribe(response => {
+        this.productList.id_p=response.id
+        this.productList.name_p=response.name
+        this.productList.category_id_p=response.category_id
+        this.productList.description_p=response.description
+        this.productList.image_path_p=response.image_path
+        this.productList.prise_p=response.prise
+        this.productList.is_available_p=response.is_available
+        this.productList.rating_p=response.rating
+        this.productList.reviews_p=response.reviews
+        this.productList.vendor_name_p=response.vendor_name
+        this.productList.warranty_p=response.warranty
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)
+      })
+    console.log("4545454545"+this.productList)
+    return this.productList
+  }
+  deleteProd(id){
+    id=this.productId
+    this.productService.deleteProduct(id).subscribe(data=>{
+      console.log("product deleted")
+    },error => {
+      alert(error.message)
+    })
+    this.route.navigate(['/products'])
+  }
 }

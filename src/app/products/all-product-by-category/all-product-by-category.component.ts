@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProductService} from '../service/product.service';
 import {Product} from '../model/product';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-all-product-by-category',
@@ -10,18 +11,22 @@ import {Product} from '../model/product';
 })
 export class AllProductByCategoryComponent implements OnInit {
 searchCategory = '';
-productList:Product;
+productList:Product[];
   constructor(private activateRoute: ActivatedRoute,private serviceProduct:ProductService) { }
 
   ngOnInit() {
     this.activateRoute.params.subscribe(data => {
       this.searchCategory = data.id;
-      console.log(this.searchCategory)
-    });
-    this.serviceProduct.searchCatProduct(this.searchCategory).subscribe((dataCat)=>{
-      console.log("zaaaaaaaaaaaaaaaaaaaaaaaaaazzz"+dataCat.productName)
-      this.productList=dataCat;
+    },
+      (error:HttpErrorResponse) =>{
+        alert(error.message)
+      }
+    )
+    this.searchCatProduct(this.searchCategory)
+  }
+  public searchCatProduct(id):void {
+    this.serviceProduct.searchCatProduct(id).subscribe((dataCat) => {
+      this.productList = dataCat;
     })
   }
-
 }

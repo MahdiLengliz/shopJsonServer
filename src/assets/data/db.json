@@ -1,40 +1,7 @@
 {
   "products": [
-    { "id": 1,
-      "name": "Mouse",
-      "category_id": 2,
-      "description": "description for product",
-      "image_path": "https://cdn.alzashop.com/ImgW.ashx?fd=f16&cd=JD754u3b",
-      "prise": 300,
-      "is_available": true,
-      "rating": 5,
-      "reviews": 110,
-      "vendor_name": "seller 1",
-      "warranty": 2},
-    { "id": 2,
-      "name": "Keyboard",
-      "category_id": 1,
-      "description": "description for product",
-      "image_path": "https://i.dell.com/is/image/DellContent//content/dam/global-asset-library/Products/peripherals_dell/Keyboards/aw410k/aw410k_ckb_rf_gy.psd?fmt=pjpg&pscan=auto&scl=1&wid=3422&hei=2468&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0&size=3422,2468",
-      "prise": 500,
-      "is_available": true,
-      "rating": 3,
-      "reviews": 90,
-      "vendor_name": "seller 2",
-      "warranty": 3},
-    { "id": 3,
-      "name": "Headphone",
-      "category_id": "3",
-      "description": "description for product",
-      "image_path": "https://www.montblanc.com/variants/images/19971654706731692/A/w2500.jpg",
-      "prise": 230,
-      "is_available": true,
-      "rating": 2,
-      "reviews": 150,
-      "vendor_name": "seller 1",
-      "warranty": 4},
-
-    { "id": 4,
+    {
+      "id": 4,
       "name": "PC PORTABLE LENOVO",
       "category_id": "1",
       "description": "Ecran 15.6\" HD - Processeur: AMD 3020e  Mémoire RAM: 4 Go DDR4 - Disque Dur: 1 To - Carte Graphique: Intel HD Graphics ",
@@ -44,8 +11,10 @@
       "rating": 3,
       "reviews": 200,
       "vendor_name": "seller 1",
-      "warranty": 4},
-    { "id": 5,
+      "warranty": 4
+    },
+    {
+      "id": 5,
       "name": "PC PORTABLE DELL",
       "category_id": "1",
       "description": "Ecran 15.6\" HD - Processeur: Intel Celeron N4205 -- Mémoire RAM: 4 Go DDR4 - Disque dur: 500 Go - Carte graphique: Intel",
@@ -55,18 +24,73 @@
       "rating": 4,
       "reviews": 200,
       "vendor_name": "seller 1",
-      "warranty": 4}
+      "warranty": 4
+    },
+    {
+      "id": 293,
+      "name": "PC PORTABLE ASUS CELERON",
+      "category_id": "1",
+      "description": "Ecran 15.6\" HD - Processeur: Intel Celeron N4000 Mémoire RAM: 4Go - Disque Dur: 1 To - Carte Graphique: Intel HD Graphics",
+      "image_path": "/assets/images/3.jpg",
+      "prise": "600",
+      "rating": "4",
+      "reviews": "4",
+      "warranty": "2 ans"
+    },
+    {
+      "id": 1363,
+      "name": "PC PORTABLE LENOVO IDEAPAD",
+      "category_id": "1",
+      "description": "Ecran 15.6\" HD - Processeur: Intel Core i5-1035G1 (1,00 GHz up to 3,60 GHz, 6 Mo de mémoire cache, Quad-Core)",
+      "image_path": "/assets/images/offerte_2.jpg",
+      "prise": "1250",
+      "rating": "3",
+      "reviews": "4",
+      "warranty": "1 ans"
+    },
+    {
+      "name": "exp",
+      "category_id": "2",
+      "description": "exp",
+      "image_path": "/assets/images/offerte_2.jpg",
+      "prise": "10011",
+      "rating": "2",
+      "reviews": "3",
+      "warranty": "50 ans",
+      "id": 7413
+    }
   ],
   "category": [
-    { "id": 1,
+    {
+      "id": 1,
       "name": "Informatique",
-      "description": "description for category" },
-    { "id": 2,
+      "description": "description for category"
+    },
+    {
+      "id": 2,
       "name": "Gamer",
-      "description": "description for category" },
-    { "id": 3,
+      "description": "description for category"
+    },
+    {
+      "id": 3,
       "name": "Impression",
-      "description": "description for category" }
+      "description": "description for category"
+    }
   ],
-  "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": "1",
+      "pseudo": "mahdi",
+      "email": "mahdi@user.com",
+      "password": "mahdi123",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "pseudo": "admin",
+      "email": "admin@admin.com",
+      "password": "mahdi123",
+      "role": "admin"
+    }
+  ]
 }
