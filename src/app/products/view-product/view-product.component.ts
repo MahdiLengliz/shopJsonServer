@@ -4,6 +4,7 @@ import {ProductService} from '../service/product.service';
 import {Product} from '../model/product';
 import {HttpErrorResponse} from '@angular/common/http';
 import {DeleteProductComponent} from '../delete-product/delete-product.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-view-product',
@@ -25,7 +26,7 @@ productList={
   vendor_name_p: '',
   warranty_p: ''
 }
-  constructor(private activateRoute: ActivatedRoute,private productService:ProductService,private route:Router) { }
+  constructor(private activateRoute: ActivatedRoute,private productService:ProductService,private route:Router,private toastr:ToastrService) { }
 
   ngOnInit() {
     this.activateRoute.params.subscribe(data => {
@@ -57,9 +58,9 @@ this.viewProduct(this.productId)
   deleteProd(id){
     id=this.productId
     this.productService.deleteProduct(id).subscribe(data=>{
-      console.log("product deleted")
+      this.toastr.success("Product Deleted")
     },error => {
-      alert(error.message)
+      this.toastr.error(error.message)
     })
     this.route.navigate(['/products'])
   }

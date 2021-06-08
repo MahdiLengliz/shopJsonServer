@@ -7,7 +7,8 @@
 
     </div>
     <div class="col-md-6 mb-3">
-      <label for="">Category </label>
+      <label for="">Category  </label>
+      <br>
       <select [(ngModel)]="id_cat_selected" name="id_cat_selected" ngModel >
         <option *ngFor="let i of catList" [value]="i.id" >
           {{i.name}}

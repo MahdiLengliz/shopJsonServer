@@ -1,3 +1,4 @@
+<div *ngIf="role_user=='user'">
 <h1 class="my-4"> Shop Name</h1>
 <a  href="products/list-products" class="list-group-item" style="color: brown">
 View All Product</a>
@@ -6,3 +7,14 @@ View All Product</a>
   <a  href="products/search-cat/{{item.id}}" class="list-group-item"> {{item.name}}</a>
 </div>
 <!-- [routerLink]="['/products/search-cat/', item.id]" !-->
+</div>
+<div *ngIf="role_user=='admin'">
+  <h1 class="my-4"> Shop Name</h1>
+  <a  href="products/list-products" class="list-group-item" style="color: brown">
+    View All Product</a>
+
+  <div class="list-group" *ngFor="let item of categoryList">
+    <a  href="products/search-cat/{{item.id}}" class="list-group-item"> {{item.name}}</a>
+  </div>
+  <!-- [routerLink]="['/products/search-cat/', item.id]" !-->
+</div>

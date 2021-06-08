@@ -49,15 +49,15 @@
       "warranty": "1 ans"
     },
     {
-      "name": "exp",
+      "id": 336,
+      "name": "zzz",
       "category_id": "2",
-      "description": "exp",
-      "image_path": "/assets/images/offerte_2.jpg",
-      "prise": "10011",
-      "rating": "2",
+      "description": "zazzaz",
+      "image_path": "/assets/images/as.jpg",
+      "prise": "4555",
+      "rating": "4",
       "reviews": "3",
-      "warranty": "50 ans",
-      "id": 7413
+      "warranty": "1 ans"
     }
   ],
   "category": [
@@ -87,7 +87,6 @@
     },
     {
       "id": "2",
-      "pseudo": "admin",
       "email": "admin@admin.com",
       "password": "mahdi123",
       "role": "admin"

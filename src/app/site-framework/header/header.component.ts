@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../../categories/service/category.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,19 @@ import {CategoryService} from '../../categories/service/category.service';
 })
 export class HeaderComponent implements OnInit {
 listUsers:any
-  rrr='user'
-  constructor(private catS:CategoryService) { }
+  role_user=''
+  constructor(private catS:CategoryService,private router:Router) { }
 
   ngOnInit() {
-    this.getUser()
+  this.getRole_user()
   }
-getUser(){
-    this.catS.getUser().subscribe(data=>{
-      this.listUsers=data
-      console.log(this.listUsers)
-    })
-}
+  getRole_user(){this.role_user=localStorage.getItem('role_user')
+    console.log("role users !!"+this.role_user)
+  }
+  logout() {
+    localStorage.removeItem('role_user');
+    this.router.navigate(['auth/login']).then(() => {
+      window.location.href = window.location.protocol + '//' + window.location.host + '/auth/login';;
+    })}
+
 }
