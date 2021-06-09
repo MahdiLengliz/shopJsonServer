@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-admin-lte',
   templateUrl: './admin-lte.component.html',
-  styleUrls: ['./admin-lte.component.css']
+  styleUrls: ['./admin-lte.component.scss']
 })
 export class AdminLTEComponent implements OnInit {
 localS

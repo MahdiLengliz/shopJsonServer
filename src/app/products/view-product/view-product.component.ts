@@ -17,6 +17,7 @@ productList={
   id_p: '',
   name_p: '',
   category_id_p: '',
+  qnt:'',
   description_p: '',
   image_path_p: '',
   prise_p: '',
@@ -40,6 +41,7 @@ this.viewProduct(this.productId)
         this.productList.id_p=response.id
         this.productList.name_p=response.name
         this.productList.category_id_p=response.category_id
+      this.productList.qnt=response.qnt
         this.productList.description_p=response.description
         this.productList.image_path_p=response.image_path
         this.productList.prise_p=response.prise
@@ -63,5 +65,49 @@ this.viewProduct(this.productId)
       this.toastr.error(error.message)
     })
     this.route.navigate(['/products'])
+  }
+  inc(prod){
+  if(prod.qnt!=5)
+prod.qnt+=1
+  }
+  dec(prod){
+  if(prod.qnt!=1)
+  prod.qnt-=1
+  }
+
+  itemsCart:any=[]
+  addToCart(product){
+  console.log(product)
+    let cartDataNull=localStorage.getItem('localCart')
+    if(cartDataNull==null){
+      let storeDataGet:any=[]
+      storeDataGet.push(product)
+      localStorage.setItem('localCart',JSON.stringify(storeDataGet))
+    }else{
+      var id=product.id_p
+      let index:number=-1
+      this.itemsCart=JSON.parse(localStorage.getItem('localCart'))
+      for(let i=0;i<this.itemsCart.length;i++){
+        if(parseInt(id) === parseInt(this.itemsCart[i].id_p)){
+          this.itemsCart[i].qnt=product.qnt
+          index = i;
+          break;
+        }
+      }
+      if(index == -1){
+        this.itemsCart.push(product)
+        localStorage.setItem('localCart',JSON.stringify(this.itemsCart))
+      }else {
+        localStorage.setItem('localCart',JSON.stringify(this.itemsCart))
+
+      }
+    }
+    this.cartNumberFunc()
+  }
+  cartNumber:number=0
+  cartNumberFunc(){
+  var cartValue=JSON.parse(localStorage.getItem('localCart'))
+    this.cartNumber=cartValue.length
+    this.productService.cartSubject.next(this.cartNumber)
   }
 }

@@ -14,6 +14,7 @@ import {ToastrService} from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   listUser:any
   role_user
+  username
   constructor(private authService:LoginService,private router:Router,private toaster:ToastrService) { }
 
   ngOnInit() {
@@ -32,8 +33,9 @@ export class LoginComponent implements OnInit {
       if((form.value.email_user===o.email)&&(form.value.password_user===o.password)){
         accept=true
         this.role_user=o.role
+        this.username=o.pseudo
         localStorage.setItem('role_user',this.role_user)
-
+        localStorage.setItem('username',this.username)
         console.log("-//////////////// "+ this.role_user)
       }else {
         console.log("invalid !!")

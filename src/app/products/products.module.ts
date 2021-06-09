@@ -11,6 +11,7 @@ import { AllProductByDateComponent } from './all-product-by-date/all-product-by-
 import { AllProductByCategoryComponent } from './all-product-by-category/all-product-by-category.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import {FormsModule} from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {FormsModule} from '@angular/forms';
     DeleteProductComponent,
     AllProductByDateComponent,
     AllProductByCategoryComponent,
-    ViewProductComponent],
+    ViewProductComponent,
+    CartComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,

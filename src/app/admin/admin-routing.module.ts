@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import {AdminLTEComponent} from './admin-lte/admin-lte.component';
 
-const routes: Routes = [{ path: '', component: AdminComponent },
+const routes: Routes = [{ path: '', redirectTo:'admin/adminlte',pathMatch:'full' },
   {path:'adminlte',component:AdminLTEComponent}];
 
 @NgModule({

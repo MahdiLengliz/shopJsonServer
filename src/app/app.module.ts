@@ -8,18 +8,28 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToastrModule, ToastrService} from 'ngx-toastr';
+import {MatSidenavModule} from '@angular/material';
+import {SiteFrameworkAdminModule} from './admin/site-framework-admin/site-framework-admin.module';
+import { AboutComponent } from './about/about.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
-    AppComponent],
+    AppComponent,
+    AboutComponent],
   imports: [
+    AngularFontAwesomeModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     SiteFrameworkModule,
     HttpClientModule,
-    FormsModule],
+    FormsModule,
+    MatSidenavModule,
+    SiteFrameworkAdminModule
+  ],
   providers: [ToastrService],
   bootstrap: [AppComponent]
 })

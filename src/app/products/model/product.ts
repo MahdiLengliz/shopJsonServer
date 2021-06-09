@@ -2,6 +2,7 @@ export interface Product {
   id: string;
   name: string;
   category_id: number;
+  qnt:number;
   description: string;
   image_path: string;
   prise: number;
