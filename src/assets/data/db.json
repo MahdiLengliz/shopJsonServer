@@ -95,5 +95,25 @@
       "password": "mahdi123",
       "role": "admin"
     }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "order_date": "",
+      "firstname": "",
+      "lastname": "",
+      "tel": "",
+      "address": "",
+      "id_product": ""
+    },
+    {
+      "id": "2",
+      "order_date": "",
+      "firstname": "",
+      "lastname": "",
+      "tel": "",
+      "address": "",
+      "id_product": ""
+    }
   ]
 }

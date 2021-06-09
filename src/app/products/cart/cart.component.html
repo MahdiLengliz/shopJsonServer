@@ -4,6 +4,7 @@
     <div *ngIf="getCartDetails">
       <table>
         <tr>
+          <th>Product Name</th>
           <th>Image</th>
           <th>Price</th>
           <th>Quantity</th>
@@ -12,39 +13,34 @@
         </tr>
         <tr *ngFor="let getCartDetail
 of getCartDetails">
+          <td>{{getCartDetail.name_p}}</td>
           <td><img src=
-                     "{{getCartDetail.img}}"
-                   alt="P1"></td>
-          <td>₹
-            {{getCartDetail.amt}}</td>
-          <td>
+                     "{{getCartDetail.image_path_p}}"
+                   alt="P1" style="height: 120px"></td>
+          <td>$
+            {{getCartDetail.prise_p}}</td>
+          <td style="text-align:center">
             <div class="content">
-              <button
-                type="button" class="btn"
-                (click)="incQnt
-(getCartDetail.prodId,
-getCartDetail.qnt)">
+              <button type="button" class="btn" (click)="incQnt(getCartDetail.id_p,getCartDetail.qnt)">
                 <i class="fa fa-plus"></i>
               </button>
-              <span>{{getCartDetail.qnt}}
-    </span>
-              <button type="button"
-                      class="btn"
-                      (click)=
-                        "decQnt(getCartDetail.prodId,
-getCartDetail.qnt)">
+              <br>
+              <span>{{getCartDetail.qnt}}</span>
+
+              <br>
+              <button type="button" class="btn" (click)="decQnt(getCartDetail.id_p,getCartDetail.qnt)">
                 <i class="fa fa-minus"></i>
               </button>
             </div>
           </td>
           <td>
-            ₹ {{getCartDetail.qnt
-          * getCartDetail.amt | number}}
+            $ {{getCartDetail.qnt
+          * getCartDetail.prise_p | number}}
           </td>
           <td><button type="button"
                       class="delete"
                       (click)="singleDelete
-    (getCartDetail.prodId)">
+    (getCartDetail.id_p)">
             <i class="fa fa-trash"></i>
           </button></td>
         </tr>
@@ -61,7 +57,12 @@ text-right">
                   class="removeall"
                   (click)="removeall()">
             <i class="fa fa-trash"></i>
-            Remove All Item</button>
+            Remove All Item </button>
+          <button type="button"
+                  class="btn-confirm"
+                  (click)="removeall()">
+            <i class="fa fa-trash"></i>
+            Confirm Order</button>
         </div>
       </div>
     </div>
