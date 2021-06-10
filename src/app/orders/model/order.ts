@@ -1,9 +1,10 @@
 export interface Order {
   id: number
+  order_ref:string
   order_date: string
   firstname: string
   lastname: string
-  tel: number
+  phone: number
   address: string
-  id_product: number
+  price_total: number
 }

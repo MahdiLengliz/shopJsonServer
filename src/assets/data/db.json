@@ -96,24 +96,38 @@
       "role": "admin"
     }
   ],
-  "orders": [
+  "checkout": [
     {
       "id": "1",
-      "order_date": "",
-      "firstname": "",
-      "lastname": "",
+      "refOrder_id": "",
+      "product_id": "",
+      "quantity": "",
+      "price_product": "",
       "tel": "",
-      "address": "",
-      "id_product": ""
+      "address": ""
+    }
+  ],
+  "orders": [
+
+    {
+      "id": 1283,
+      "order_ref": "x46hwbphx",
+      "order_date": 1623351923202,
+      "firstname": "aa",
+      "lastname": "aa",
+      "phone": "2112151",
+      "address": "aaa",
+      "price_total": 2240
     },
     {
-      "id": "2",
-      "order_date": "",
-      "firstname": "",
-      "lastname": "",
-      "tel": "",
-      "address": "",
-      "id_product": ""
+      "id": 2311,
+      "order_ref": "td0xxbl3v",
+      "order_date": "2021-06-10",
+      "firstname": "aa",
+      "lastname": "aaa",
+      "phone": "2121212",
+      "address": "aa",
+      "price_total": 2240
     }
   ]
 }

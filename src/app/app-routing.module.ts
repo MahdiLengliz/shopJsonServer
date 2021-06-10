@@ -6,8 +6,7 @@ const routes: Routes = [{ path: 'products', loadChildren: () => import('./produc
   { path: 'categories', loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule) },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  {path:'about',component:AboutComponent},
-  { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) }];
+  {path:'about',component:AboutComponent}];
 
 
 
