@@ -14,9 +14,9 @@
 
     <!-- Login Form -->
     <form   (submit)="loginProcess(login)" #login="ngForm">
-      <input  type="text"  class="fadeIn second"   name="email_user" ngModel placeholder="login"   >
+      <input  type="text"  class="fadeIn second input-group"   name="email_user" ngModel placeholder="login"   >
       <br>
-      <input type="text" id="password" class="fadeIn third" name="password_user" ngModel placeholder="password" >
+      <input type="text" id="password" class="fadeIn second input-group" name="password_user" ngModel placeholder="password" >
       <button type="submit" class="btn btn-primary" value="Log In">Login</button>
     </form>
 

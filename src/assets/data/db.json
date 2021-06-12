@@ -51,23 +51,33 @@
       "warranty": "1 ans"
     },
     {
-      "id": 336,
-      "name": "zzz",
+      "id": 7405,
+      "name": "zz",
       "category_id": "2",
-      "qnt": 1,
-      "description": "zazzaz",
+      "description": "aa",
       "image_path": "/assets/images/as.jpg",
-      "prise": "4555",
-      "rating": "4",
+      "prise": "142",
+      "rating": "3",
       "reviews": "3",
       "warranty": "1 ans"
+    },
+    {
+      "id": 8410,
+      "name": "ccc",
+      "category_id": "3",
+      "description": "ccc",
+      "image_path": "/assets/images/lenvos.jpg",
+      "prise": "125",
+      "rating": "5",
+      "reviews": "2",
+      "warranty": "ccc"
     }
   ],
   "category": [
     {
       "id": 1,
-      "name": "Informatique",
-      "description": "description for category"
+      "name": "Informatiques",
+      "description": "description for categorys"
     },
     {
       "id": 2,
@@ -78,6 +88,26 @@
       "id": 3,
       "name": "Impression",
       "description": "description for category"
+    },
+    {
+      "name": "aa",
+      "description": "aa",
+      "id": 4
+    },
+    {
+      "name": "aaa",
+      "description": "aaaa",
+      "id": 5
+    },
+    {
+      "name": "aaaa",
+      "description": "aaaaa",
+      "id": 6
+    },
+    {
+      "name": "aaaaaa",
+      "description": "aaaaaaaaa",
+      "id": 7
     }
   ],
   "users": [
@@ -98,36 +128,64 @@
   ],
   "checkout": [
     {
-      "id": "1",
-      "refOrder_id": "",
-      "product_id": "",
-      "quantity": "",
-      "price_product": "",
-      "tel": "",
-      "address": ""
+      "refOrder": "rua1hs79d",
+      "id_product_c": 4,
+      "quantity_c": 1,
+      "price_t": 1280,
+      "id": 1
+    },
+    {
+      "refOrder": "rua1hs79d",
+      "id_product_c": 5,
+      "quantity_c": 2,
+      "price_t": 1280,
+      "id": 2
+    },
+    {
+      "refOrder": "kg22axk9k",
+      "id_product_c": 4,
+      "quantity_c": 1,
+      "price_t": 560,
+      "id": 3
+    },
+    {
+      "refOrder": "sf1nfxc45",
+      "id_product_c": 4,
+      "quantity_c": 1,
+      "price_t": 560,
+      "id": 4
     }
   ],
   "orders": [
-
     {
-      "id": 1283,
-      "order_ref": "x46hwbphx",
-      "order_date": 1623351923202,
-      "firstname": "aa",
-      "lastname": "aa",
-      "phone": "2112151",
-      "address": "aaa",
-      "price_total": 2240
+      "id": 2621,
+      "order_ref": "rua1hs79d",
+      "order_date": "2021-06-10",
+      "firstname": "mahdi",
+      "lastname": "lengliz",
+      "phone": "90118948",
+      "address": "rue annaba cité riadh kelibia",
+      "price_total": 1280
     },
     {
-      "id": 2311,
-      "order_ref": "td0xxbl3v",
+      "id": 3561,
+      "order_ref": "kg22axk9k",
       "order_date": "2021-06-10",
       "firstname": "aa",
-      "lastname": "aaa",
-      "phone": "2121212",
+      "lastname": "aa",
+      "phone": "1452",
       "address": "aa",
-      "price_total": 2240
+      "price_total": 560
+    },
+    {
+      "id": 986,
+      "order_ref": "sf1nfxc45",
+      "order_date": "2021-06-12",
+      "firstname": "adnen",
+      "lastname": "ettayeb",
+      "phone": "1478523",
+      "address": "aaa",
+      "price_total": 560
     }
   ]
 }

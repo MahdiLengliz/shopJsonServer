@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryService} from '../../categories/service/category.service';
+import {CategoryService} from '../../shared/service/category.service';
 import {Router} from '@angular/router';
-import {ProductService} from '../../products/service/product.service';
+import {ProductService} from '../../shared/service/product.service';
 
 @Component({
   selector: 'app-header',
@@ -29,6 +29,8 @@ listUsers:any
   logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('role_user');
+    localStorage.removeItem('localCart');
+    localStorage.removeItem('total')
     this.router.navigate(['auth/login']).then(() => {
       window.location.href = window.location.protocol + '//' + window.location.host + '/auth/login';;
     })}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {Product} from '../model/product';
+import {Product} from '../../model/product';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 const url = 'http://localhost:3000/products';
 @Injectable({
@@ -31,8 +31,8 @@ export class ProductService {
   searchDateProduct(date): Observable<Product> {
     return this.http.get<Product>(url+'date='+date);
   }
-  viewAllProducts(): Observable<any> {
-    return this.http.get(url);
+  viewAllProducts(): Observable<Product> {
+    return this.http.get<Product>(url);
   }
 
   cartSubject = new Subject<any>()

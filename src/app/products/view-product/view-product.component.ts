@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Route, Router} from '@angular/router';
-import {ProductService} from '../service/product.service';
-import {Product} from '../model/product';
+import {ProductService} from '../../shared/service/product.service';
+import {Product} from '../../model/product';
 import {HttpErrorResponse} from '@angular/common/http';
 import {DeleteProductComponent} from '../delete-product/delete-product.component';
 import {ToastrService} from 'ngx-toastr';

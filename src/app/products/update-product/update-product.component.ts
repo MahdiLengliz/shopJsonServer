@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Product} from '../model/product';
-import {ProductService} from '../service/product.service';
+import {Product} from '../../model/product';
+import {ProductService} from '../../shared/service/product.service';
 import {ToastrService} from 'ngx-toastr';
-import {Category} from '../../categories/model/category';
-import {CategoryService} from '../../categories/service/category.service';
+import {Category} from '../../model/category';
+import {CategoryService} from '../../shared/service/category.service';
 
 @Component({
   selector: 'app-update-product',
@@ -25,7 +25,7 @@ export class UpdateProductComponent implements OnInit {
     warranty: ''
   }
   productId = 0;
-  catList:Category[]
+  catList:any=[]
   id_cat_selected
 
   constructor(private activateRoute: ActivatedRoute,private pService:ProductService,private toastr:ToastrService,private catService:CategoryService) { }
@@ -41,7 +41,7 @@ export class UpdateProductComponent implements OnInit {
     this.getCategorie()
   }
   getCategorie():void{
-    this.catService.getCategory().subscribe((dataC:Category[])=>{
+    this.catService.getCategory().subscribe((dataC)=>{
       this.catList=dataC
     })
   }

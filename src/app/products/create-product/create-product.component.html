@@ -10,7 +10,7 @@
       <label for="">Category  </label>
       <br>
       <select [(ngModel)]="id_cat_selected" name="id_cat_selected" ngModel >
-        <option *ngFor="let i of catList" [value]="i.id" >
+        <option  *ngFor="let i of catList" [value]="i.id" >
           {{i.name}}
         </option>
       </select>

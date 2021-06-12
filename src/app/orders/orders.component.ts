@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material';
-import {OrderService} from './service/order.service';
+import {OrderService} from '../shared/service/order.service';
 import {ToastrService} from 'ngx-toastr';
 import {DatePipe} from '@angular/common';
+import {CheckoutService} from '../shared/service/checkout.service';
 
 @Component({
   selector: 'app-orders',
@@ -14,7 +15,8 @@ export class OrdersComponent implements OnInit {
 total=0
   refOrder
   constructor(private formBuilder:FormBuilder,private matDialog:MatDialog,
-              private orderService:OrderService,private toastr:ToastrService,private datePipe:DatePipe) { }
+              private orderService:OrderService,private toastr:ToastrService,
+              private datePipe:DatePipe,private checkService:CheckoutService) { }
   orderForm=this.formBuilder.group({
     firstName:['',Validators.required],
     lastName:['',Validators.required],
@@ -46,8 +48,20 @@ total=0
       console.log(data)
     },error => {
       return this.toastr.error(error.message)
-
     })
+    this.getCartDetails.map(cart=>{
+      let newCheckout={
+        refOrder:this.refOrder,
+        id_product_c:cart.id_p,
+        quantity_c:cart.qnt,
+        price_t:parseInt(localStorage.getItem('total'))
+      }
+      this.checkService.addCheckOut(newCheckout).subscribe(dataC=>{
+        console.log('checkout Done !')
+      })
+    })
+    localStorage.removeItem('total')
+    localStorage.removeItem('localCart')
   }
   closeForm(){
 this.matDialog.closeAll()

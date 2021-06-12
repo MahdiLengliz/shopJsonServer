@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CategoryService} from './categories/service/category.service';
+import {CategoryService} from './shared/service/category.service';
 import {Router} from '@angular/router';
 
 @Component({
